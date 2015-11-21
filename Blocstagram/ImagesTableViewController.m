@@ -40,7 +40,7 @@
 #pragma mark - Table view data source
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return [DataSource sharedInstance].mediaItems.count;
+    return [self items].count;
 }
 
 
@@ -73,6 +73,10 @@
     Media *item = [DataSource sharedInstance].mediaItems[indexPath.row];
     UIImage *image = item.image;
     return (CGRectGetWidth(self.view.frame) / image.size.width) * image.size.height;
+}
+
+- (NSArray *) items {
+    return [DataSource sharedInstance].mediaItems;
 }
 
 @end
