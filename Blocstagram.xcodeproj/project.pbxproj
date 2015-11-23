@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B59627241C0202AF00859CCC /* MediaTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B59627231C0202AF00859CCC /* MediaTableViewCell.m */; };
 		B5DB07031BFCC42600532611 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = B5DB07021BFCC42600532611 /* User.m */; };
 		B5DB07061BFCC4FF00532611 /* Media.m in Sources */ = {isa = PBXBuildFile; fileRef = B5DB07051BFCC4FF00532611 /* Media.m */; };
 		B5DB07091BFCC5E700532611 /* Comment.m in Sources */ = {isa = PBXBuildFile; fileRef = B5DB07081BFCC5E700532611 /* Comment.m */; };
@@ -48,6 +49,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		B59627221C0202AF00859CCC /* MediaTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MediaTableViewCell.h; path = ../MediaTableViewCell.h; sourceTree = "<group>"; };
+		B59627231C0202AF00859CCC /* MediaTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MediaTableViewCell.m; path = ../MediaTableViewCell.m; sourceTree = "<group>"; };
 		B5DB07011BFCC42600532611 /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
 		B5DB07021BFCC42600532611 /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
 		B5DB07041BFCC4FF00532611 /* Media.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Media.h; sourceTree = "<group>"; };
@@ -136,6 +139,8 @@
 				B5E978451BF9811D0073F42A /* AppDelegate.m */,
 				B5E978891BF98B4B0073F42A /* ImagesTableViewController.h */,
 				B5E9788A1BF98B4B0073F42A /* ImagesTableViewController.m */,
+				B59627221C0202AF00859CCC /* MediaTableViewCell.h */,
+				B59627231C0202AF00859CCC /* MediaTableViewCell.m */,
 				B5DB07011BFCC42600532611 /* User.h */,
 				B5DB07021BFCC42600532611 /* User.m */,
 				B5DB07041BFCC4FF00532611 /* Media.h */,
@@ -336,6 +341,7 @@
 			files = (
 				B5DB07031BFCC42600532611 /* User.m in Sources */,
 				B5DB07091BFCC5E700532611 /* Comment.m in Sources */,
+				B59627241C0202AF00859CCC /* MediaTableViewCell.m in Sources */,
 				B5DB07061BFCC4FF00532611 /* Media.m in Sources */,
 				B5E978461BF9811D0073F42A /* AppDelegate.m in Sources */,
 				B5DB070C1BFCC66700532611 /* DataSource.m in Sources */,
