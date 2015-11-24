@@ -24,6 +24,7 @@ static UIFont *lightFont;
 static UIFont *boldFont;
 static UIColor *usernameLabelGray;
 static UIColor *commentLabelGray;
+static UIColor *commentLabelOrange;
 static UIColor *linkColor;
 static NSParagraphStyle *paragraphStyle;
 
@@ -54,6 +55,7 @@ static NSParagraphStyle *paragraphStyle;
     boldFont = [UIFont fontWithName:@"HelveticaNeue-Bold" size:11];
     usernameLabelGray = [UIColor colorWithRed:0.933 green:0.933 blue:0.933 alpha:1]; /*#eeeeee*/
     commentLabelGray = [UIColor colorWithRed:0.898 green:0.898 blue:0.898 alpha:1]; /*#e5e5e5*/
+    commentLabelOrange = [UIColor colorWithRed:1.00 green:0.65 blue:0.00 alpha:1.0]; /*ffa500*/
     linkColor = [UIColor colorWithRed:0.345 green:0.314 blue:0.427 alpha:1]; /*#58506d*/
     
     NSMutableParagraphStyle *mutableParagraphStyle = [[NSMutableParagraphStyle alloc] init];
@@ -79,32 +81,46 @@ static NSParagraphStyle *paragraphStyle;
     NSString *baseString = [NSString stringWithFormat:@"%@ %@", self.mediaItem.user.userName, self.mediaItem.caption];
     
     // #3 - Make an attributed string, with the "username" bold
-    NSMutableAttributedString *mutableUsernameAndCaptionString = [[NSMutableAttributedString alloc] initWithString:baseString attributes:@{NSFontAttributeName : [lightFont fontWithSize:usernameFontSize], NSParagraphStyleAttributeName : paragraphStyle}];
+    NSMutableAttributedString *mutableUsernameAndCaptionString = [[NSMutableAttributedString alloc] initWithString:baseString attributes:@{NSFontAttributeName : [lightFont fontWithSize:usernameFontSize], NSParagraphStyleAttributeName : paragraphStyle, NSKernAttributeName: @2}];
     
     // #4
     NSRange usernameRange = [baseString rangeOfString:self.mediaItem.user.userName];
     [mutableUsernameAndCaptionString addAttribute:NSFontAttributeName value:[boldFont fontWithSize:usernameFontSize] range:usernameRange];
     [mutableUsernameAndCaptionString addAttribute:NSForegroundColorAttributeName value:linkColor range:usernameRange];
+    [mutableUsernameAndCaptionString addAttribute:NSKernAttributeName value:@0 range:usernameRange];
     
     return mutableUsernameAndCaptionString;
 }
 
 - (NSAttributedString *) commentString {
     NSMutableAttributedString *commentString = [[NSMutableAttributedString alloc] init];
-    
+    NSUInteger count = 0;
     for (Comment *comment in self.mediaItem.comments) {
         // Make a string that says "username comment" followed by a line break
         NSString *baseString = [NSString stringWithFormat:@"%@ %@\n", comment.from.userName, comment.text];
         
-        // Make an attributed string, with the "username" bold
+        NSMutableAttributedString *oneCommentString;
         
-        NSMutableAttributedString *oneCommentString = [[NSMutableAttributedString alloc] initWithString:baseString attributes:@{NSFontAttributeName : lightFont, NSParagraphStyleAttributeName : paragraphStyle}];
+        // Make an attributed string, with the "username" bold
+        if (count == 0) {
+            oneCommentString = [[NSMutableAttributedString alloc] initWithString:baseString attributes:@{NSFontAttributeName : lightFont, NSParagraphStyleAttributeName : paragraphStyle, NSForegroundColorAttributeName: commentLabelOrange}];
+        } else {
+            oneCommentString = [[NSMutableAttributedString alloc] initWithString:baseString attributes:@{NSFontAttributeName : lightFont, NSParagraphStyleAttributeName : paragraphStyle}];
+        }
+        
+        if (count % 2 == 1) { // Even
+            //[oneCommentString addAttribute:NSTextAlignmentRight];
+        } else if (count % 2 == 1) { // Odd
+            //[oneCommentString addAttributes:@{NSTextAlignmentRight: true} range:(NSRange){0, -1}];
+        }
+        
         
         NSRange usernameRange = [baseString rangeOfString:comment.from.userName];
         [oneCommentString addAttribute:NSFontAttributeName value:boldFont range:usernameRange];
         [oneCommentString addAttribute:NSForegroundColorAttributeName value:linkColor range:usernameRange];
         
         [commentString appendAttributedString:oneCommentString];
+        count++;
     }
     
     return commentString;
