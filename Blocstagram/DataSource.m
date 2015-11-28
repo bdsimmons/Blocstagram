@@ -148,4 +148,10 @@
     [mutableArrayWithKVO removeObject:item];
 }
 
+- (void) moveMediaItemToTop:(Media *)item {
+    NSMutableArray *mutableArrayWithKVO = [self mutableArrayValueForKey:@"mediaItems"];
+    [mutableArrayWithKVO removeObject:item];
+    [mutableArrayWithKVO insertObject:item atIndex:0];
+}
+
 @end
