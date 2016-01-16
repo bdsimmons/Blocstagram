@@ -23,6 +23,9 @@ NSString *const LoginViewControllerDidGetAccessTokenNotification = @"LoginViewCo
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
+    UIBarButtonItem *newBackButton = [[UIBarButtonItem alloc] initWithTitle:@"Home" style:UIBarButtonItemStyleBordered target:self action:@selector(home:)];
+    self.navigationItem.leftBarButtonItem=newBackButton;
+    
     UIWebView *webView = [[UIWebView alloc] init];
     webView.delegate = self;
     
