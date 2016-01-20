@@ -46,6 +46,7 @@
         if (!self.accessToken) {
             [self registerForAccessTokenNotification];
         } else {
+            NSLog(@"Got here");
             dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
                 NSString *fullPath = [self pathForFilename:NSStringFromSelector(@selector(mediaItems))];
                 NSArray *storedMediaItems = [NSKeyedUnarchiver unarchiveObjectWithFile:fullPath];
@@ -61,6 +62,7 @@
                         for (Media* mediaItem in self.mediaItems) {
                             [self downloadImageForMediaItem:mediaItem];
                         }
+                        [self requestNewItemsWithCompletionHandler:nil];
                         
                     } else {
                         [self populateDataWithParameters:nil completionHandler:nil];
