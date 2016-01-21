@@ -14,6 +14,7 @@
 @property (nonatomic, strong) Media *media;
 @property (nonatomic, strong) UITapGestureRecognizer *tap;
 @property (nonatomic, strong) UITapGestureRecognizer *doubleTap;
+- (void)buttonPressed:(UIButton *)sender;
 
 @end
 
@@ -57,6 +58,15 @@
     
     [self.scrollView addGestureRecognizer:self.tap];
     [self.scrollView addGestureRecognizer:self.doubleTap];
+    
+    // shareButton
+    UIButton *shareButton = [UIButton buttonWithType:UIButtonTypeSystem];
+    [self.view addSubview:shareButton];
+    [shareButton setTitle:@"Share" forState:UIControlStateNormal];
+    [shareButton addTarget:self action:@selector(buttonPressed:) forControlEvents:UIControlEventTouchUpInside];
+    shareButton.frame = CGRectMake( 300, 20, 100, 50 );
+    shareButton.backgroundColor = [UIColor grayColor];
+    [shareButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -142,6 +152,13 @@
         // #9
         [self.scrollView setZoomScale:self.scrollView.minimumZoomScale animated:YES];
     }
+}
+
+- (void) buttonPressed:(UIButton *)sender {
+    NSMutableArray *itemsToShare = [NSMutableArray array];
+    [itemsToShare addObject:self.media.image];
+    UIActivityViewController *activityVC = [[UIActivityViewController alloc] initWithActivityItems:itemsToShare applicationActivities:nil];
+    [self presentViewController:activityVC animated:YES completion:nil];
 }
 
 @end
