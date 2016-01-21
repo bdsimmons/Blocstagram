@@ -174,4 +174,9 @@
     }
 }
 
+- (void)didDoubleTapCell:(MediaTableViewCell *)cell {
+    NSLog(@"Retry image download");
+    [[DataSource sharedInstance] downloadImageForMediaItem:cell.mediaItem];
+}
+
 @end
