@@ -264,11 +264,17 @@
         UIViewAnimationCurve curve = curveNumber.unsignedIntegerValue;
         UIViewAnimationOptions options = curve << 16;
         
-        [UIView animateWithDuration:duration delay:0 options:options animations:^{
+        [UIView animateWithDuration:duration delay:0 usingSpringWithDamping:0.9 initialSpringVelocity:9 options:options animations:^{
             self.tableView.contentInset = contentInsets;
             self.tableView.scrollIndicatorInsets = scrollIndicatorInsets;
             self.tableView.contentOffset = contentOffset;
         } completion:nil];
+        
+//        [UIView animateWithDuration:duration delay:0 options:options animations:^{
+//            self.tableView.contentInset = contentInsets;
+//            self.tableView.scrollIndicatorInsets = scrollIndicatorInsets;
+//            self.tableView.contentOffset = contentOffset;
+//        } completion:nil];
     }
     
     self.lastKeyboardAdjustment = heightToScroll;
@@ -289,10 +295,15 @@
     UIViewAnimationCurve curve = curveNumber.unsignedIntegerValue;
     UIViewAnimationOptions options = curve << 16;
     
-    [UIView animateWithDuration:duration delay:0 options:options animations:^{
+    [UIView animateWithDuration:duration delay:0 usingSpringWithDamping:0.9 initialSpringVelocity:9 options:options animations:^{
         self.tableView.contentInset = contentInsets;
         self.tableView.scrollIndicatorInsets = scrollIndicatorInsets;
     } completion:nil];
+    
+//    [UIView animateWithDuration:duration delay:0 options:options animations:^{
+//        self.tableView.contentInset = contentInsets;
+//        self.tableView.scrollIndicatorInsets = scrollIndicatorInsets;
+//    } completion:nil];
 }
 
 @end
