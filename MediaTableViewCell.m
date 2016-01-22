@@ -2,7 +2,7 @@
 //  MediaTableViewCell.m
 //  Blocstagram
 //
-//  Created by Benjamin Simmons on 11/22/15.
+//  Created by Benjamin 'Bonesaw' Simmons on 11/22/15.
 //  Copyright © 2015 Ben Simmons. All rights reserved.
 //
 
