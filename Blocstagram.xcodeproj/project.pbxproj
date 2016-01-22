@@ -32,6 +32,7 @@
 		B5E978881BF989860073F42A /* 10.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B5E9787E1BF989860073F42A /* 10.jpg */; };
 		B5E9788B1BF98B4B0073F42A /* ImagesTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B5E9788A1BF98B4B0073F42A /* ImagesTableViewController.m */; };
 		B5F2B0A21C50A781008D68C5 /* MediaFullScreenViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B5F2B0A11C50A781008D68C5 /* MediaFullScreenViewController.m */; };
+		B5F2B0A51C51AEF3008D68C5 /* ComposeCommentView.m in Sources */ = {isa = PBXBuildFile; fileRef = B5F2B0A41C51AEF3008D68C5 /* ComposeCommentView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -93,6 +94,8 @@
 		B5E9788A1BF98B4B0073F42A /* ImagesTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImagesTableViewController.m; sourceTree = "<group>"; };
 		B5F2B0A01C50A781008D68C5 /* MediaFullScreenViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MediaFullScreenViewController.h; sourceTree = "<group>"; };
 		B5F2B0A11C50A781008D68C5 /* MediaFullScreenViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MediaFullScreenViewController.m; sourceTree = "<group>"; };
+		B5F2B0A31C51AEF3008D68C5 /* ComposeCommentView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ComposeCommentView.h; sourceTree = "<group>"; };
+		B5F2B0A41C51AEF3008D68C5 /* ComposeCommentView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ComposeCommentView.m; sourceTree = "<group>"; };
 		EE22C63ABB067110D624814E /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -169,6 +172,8 @@
 				B5E978451BF9811D0073F42A /* AppDelegate.m */,
 				B5E978891BF98B4B0073F42A /* ImagesTableViewController.h */,
 				B5E9788A1BF98B4B0073F42A /* ImagesTableViewController.m */,
+				B5F2B0A31C51AEF3008D68C5 /* ComposeCommentView.h */,
+				B5F2B0A41C51AEF3008D68C5 /* ComposeCommentView.m */,
 				B59627221C0202AF00859CCC /* MediaTableViewCell.h */,
 				B59627231C0202AF00859CCC /* MediaTableViewCell.m */,
 				B5F2B0A01C50A781008D68C5 /* MediaFullScreenViewController.h */,
@@ -431,6 +436,7 @@
 				B5DB07061BFCC4FF00532611 /* Media.m in Sources */,
 				B5E978461BF9811D0073F42A /* AppDelegate.m in Sources */,
 				B5B4B7FF1C442782007BD654 /* LoginViewController.m in Sources */,
+				B5F2B0A51C51AEF3008D68C5 /* ComposeCommentView.m in Sources */,
 				B5DB070C1BFCC66700532611 /* DataSource.m in Sources */,
 				B5E978431BF9811D0073F42A /* main.m in Sources */,
 				B5E9788B1BF98B4B0073F42A /* ImagesTableViewController.m in Sources */,
